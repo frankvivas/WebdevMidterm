@@ -16,8 +16,8 @@ const vite = await createServer({ server: { middlewareMode: true }, appType: 'cu
 try {
   const { default: App } = await vite.ssrLoadModule('/src/App.jsx')
   const html = renderToString(React.createElement(App))
-  if (!html.includes('PocketPlan')) throw new Error('App rendered without its main interface')
-  console.log('PocketPlan rendered successfully.')
+  if (!html.includes('Budget Tracker')) throw new Error('App rendered without its main interface')
+  console.log('Budget Tracker rendered successfully.')
 } finally {
   await vite.close()
   await window.close()

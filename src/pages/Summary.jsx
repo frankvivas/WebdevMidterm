@@ -41,7 +41,7 @@ export default function Summary() {
           </div>
         </article>
         <article className="panel insight-card">
-          <span className="eyebrow">PocketPlan insight</span>
+          <span className="eyebrow">Budget Tracker insight</span>
           <div className="insight-number">{Math.round(savingsRate)}<sup>%</sup></div>
           <h2>of your income stayed in your pocket.</h2>
           <p>{savingsRate >= 20 ? 'That’s a healthy margin. Keep your essential spending steady and you’ll finish the month strong.' : 'A few small adjustments to flexible spending can make next month feel roomier.'}</p>

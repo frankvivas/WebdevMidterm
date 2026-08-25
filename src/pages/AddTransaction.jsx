@@ -54,13 +54,6 @@ export default function AddTransaction() {
           </div>
           <div className="form-actions"><Link className="secondary-button" to="/">Cancel</Link><button className="primary-button" type="submit"><Check size={18} /> Save transaction</button></div>
         </form>
-        <aside className="form-tip">
-          <span className="tip-number">01</span>
-          <h2>A small habit, a clearer picture.</h2>
-          <p>Logging purchases as they happen makes your summary more useful and your next decision easier.</p>
-          <div className="tip-line" />
-          <span>This transaction is saved to this device.</span>
-        </aside>
       </section>
     </main>
   )

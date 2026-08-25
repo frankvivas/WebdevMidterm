@@ -14,7 +14,7 @@ export default function Layout() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <Link className="brand" to="/"><span className="brand-mark">P</span><span>PocketPlan</span></Link>
+        <Link className="brand" to="/">Budget Tracker</Link>
         <nav aria-label="Main navigation">
           <NavLink to="/" end><LayoutDashboard size={19} /><span>Dashboard</span></NavLink>
           <NavLink to="/add"><Plus size={19} /><span>Add transaction</span></NavLink>

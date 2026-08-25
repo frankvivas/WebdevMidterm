@@ -1,6 +1,6 @@
-# PocketPlan
+# Budget Tracker
 
-A multi-page personal budget tracker built with React and Vite. PocketPlan lets users record income and expenses, filter transactions, edit or delete entries, review category-level spending, and switch between light and dark themes.
+A multi-page personal budget tracker built with React and Vite. Budget Tracker lets users record income and expenses, filter transactions, edit or delete entries, review category-level spending, and switch between light and dark themes.
 
 ## Features
 
