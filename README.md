@@ -1,16 +1,30 @@
-# React + Vite
+# PocketPlan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A multi-page personal budget tracker built with React and Vite. PocketPlan lets users record income and expenses, filter transactions, edit or delete entries, review category-level spending, and switch between light and dark themes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Dashboard with current balance, income, expenses, search, type filters, and category filters
+- Add-transaction form with required-field validation
+- Individual transaction URLs with editing and deletion
+- Spending summary by category
+- App-wide light and dark theme through React Context
+- Transaction persistence through a reusable custom local-storage hook
+- Memoized transaction rows and derived totals to avoid unnecessary rendering
+- Responsive layout for desktop, tablet, and mobile
 
-## React Compiler
+## Routes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- `/` — Dashboard
+- `/add` — Add Transaction
+- `/transaction/:id` — Transaction Detail
+- `/summary` — Spending Summary
 
-## Expanding the ESLint configuration
+## Local setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm install
+npm run dev
+```
+
+Create a production build with `npm run build`.
