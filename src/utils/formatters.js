@@ -2,7 +2,7 @@ export const formatCurrency = (amount, maximumFractionDigits = 2) =>
   new Intl.NumberFormat('en-PH', {
     style: 'currency',
     currency: 'PHP',
-    minimumFractionDigits: 2,
+    minimumFractionDigits: Math.min(2, maximumFractionDigits),
     maximumFractionDigits,
   }).format(amount)
 
