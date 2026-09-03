@@ -30,7 +30,6 @@ export default function Dashboard() {
   return (
     <main className="content">
       <PageHeader
-        eyebrow="Tuesday, August 25"
         title="Good morning, Frank."
         description="Here’s how your money is moving this month."
         action={<Link className="primary-button" to="/add"><Plus size={18} /> Add transaction</Link>}
@@ -74,7 +73,7 @@ function SpendingPace({ transactions, total }) {
 
   return (
     <article className="panel overview-panel">
-      <div className="panel-heading"><div><span className="eyebrow">August overview</span><h2>Spending pace</h2></div></div>
+      <div className="panel-heading"><div><h2>Spending pace</h2></div></div>
       <div className="donut" style={{ '--spent-progress': `${Math.min(100, (total / 1700) * 100)}%` }}><div><strong>{formatCurrency(total, 0)}</strong><span>spent</span></div></div>
       <div className="legend">{categoryTotals.map(([category, amount], index) => <span key={category}><i className={colors[index]} /> {category} <b>{formatCurrency(amount, 0)}</b></span>)}</div>
       <Link className="text-link" to="/summary">View full summary <ArrowUpRight size={16} /></Link>

@@ -40,14 +40,6 @@ export default function Summary() {
             <div className="category-list">{categories.map(([category, amount], index) => { const percent = totals.expenses ? (amount / totals.expenses) * 100 : 0; return <div className="category-row" key={category}><i style={{ background: colors[index % colors.length] }} /><div><strong>{category}</strong><span>{percent.toFixed(1)}% of spending</span></div><b>{formatCurrency(amount)}</b></div> })}</div>
           </div>
         </article>
-        <article className="panel insight-card">
-          <span className="eyebrow">Budget Tracker insight</span>
-          <div className="insight-number">{Math.round(savingsRate)}<sup>%</sup></div>
-          <h2>of your income stayed in your pocket.</h2>
-          <p>{savingsRate >= 20 ? 'That’s a healthy margin. Keep your essential spending steady and you’ll finish the month strong.' : 'A few small adjustments to flexible spending can make next month feel roomier.'}</p>
-          <div className="income-expense-bar"><span style={{ width: `${Math.max(0, Math.min(100, savingsRate))}%` }} /></div>
-          <div className="bar-labels"><span>Saved</span><span>Spent</span></div>
-        </article>
       </section>
     </main>
   )
