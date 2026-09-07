@@ -1,7 +1,6 @@
-import { ArrowDownLeft, ArrowUpRight, Moon, Sun, TrendingDown } from 'lucide-react'
+import { ArrowDownLeft, ArrowUpRight, TrendingDown } from 'lucide-react'
 import { useMemo } from 'react'
 import PageHeader from '../components/PageHeader'
-import { useTheme } from '../context/ThemeContext'
 import { useTransactions } from '../context/TransactionsContext'
 import { formatCurrency } from '../utils/formatters'
 
@@ -9,7 +8,6 @@ const colors = ['#2f6b4f', '#ffb58f', '#c8f169', '#7ba594', '#e9cf78', '#bb8bc0'
 
 export default function Summary() {
   const { transactions, totals } = useTransactions()
-  const { theme, toggleTheme } = useTheme()
   const categories = useMemo(() => {
     const groups = {}
     transactions.filter((item) => item.type === 'expense').forEach((item) => { groups[item.category] = (groups[item.category] || 0) + Number(item.amount) })
@@ -26,7 +24,7 @@ export default function Summary() {
 
   return (
     <main className="content summary-page">
-      <PageHeader eyebrow="August 2026" title="Your spending story" description="A clear look at where your money went—and what stayed." action={<button className="theme-button" type="button" onClick={toggleTheme}>{theme === 'light' ? <Moon size={17} /> : <Sun size={17} />} {theme === 'light' ? 'Dark theme' : 'Light theme'}</button>} />
+      <PageHeader title="Budget Summary" />
       <section className="summary-highlights">
         <article><div className="stat-icon expense"><ArrowUpRight size={20} /></div><span>Total spent</span><strong>{formatCurrency(totals.expenses)}</strong><small>Across {categories.length} categories</small></article>
         <article><div className="stat-icon income"><ArrowDownLeft size={20} /></div><span>Saved this month</span><strong>{formatCurrency(totals.balance)}</strong><small>{savingsRate.toFixed(1)}% savings rate</small></article>
